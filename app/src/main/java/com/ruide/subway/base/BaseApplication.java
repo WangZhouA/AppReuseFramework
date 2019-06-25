@@ -3,6 +3,12 @@ package com.ruide.subway.base;
 import android.app.Application;
 import android.content.Context;
 
+import com.lzy.okgo.OkGo;
+import com.lzy.okgo.cache.CacheMode;
+import com.orhanobut.logger.Logger;
+import com.ruide.subway.network.netUtils.OkGoInit;
+import com.ruide.subway.utils.LogUtils;
+
 public  class BaseApplication  extends Application implements Thread.UncaughtExceptionHandler {
 
 
@@ -29,7 +35,9 @@ public  class BaseApplication  extends Application implements Thread.UncaughtExc
     private void onAppInit() {
         instance = this;
         //异常捕获
+        OkGoInit.initOkGo(instance);
         Thread.setDefaultUncaughtExceptionHandler(this);
+
     }
 
     @Override
@@ -40,7 +48,7 @@ public  class BaseApplication  extends Application implements Thread.UncaughtExc
 
     @Override
     public void uncaughtException(Thread thread, Throwable ex) {
-        ex.printStackTrace();
+        Logger.e(ex,"Exception");
         System.exit(0);
 
     }

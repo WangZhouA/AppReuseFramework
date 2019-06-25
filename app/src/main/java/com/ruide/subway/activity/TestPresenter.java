@@ -17,6 +17,6 @@ public class TestPresenter extends PresenterImpl<TestActivity,TestMode> {
 
 
     public  void  add(){
-        Log.e("----->值","111");
+        Log.e("----->值","333333");
     }
 }
