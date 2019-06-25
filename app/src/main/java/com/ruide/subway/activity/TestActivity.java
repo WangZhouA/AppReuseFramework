@@ -31,6 +31,6 @@ public class TestActivity   extends BaseMVPActivity<TestPresenter>{
     @Override
     protected void initListener() {
         super.initListener();
-        Toast.makeText(mContext, "111", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, "2222", Toast.LENGTH_SHORT).show();
     }
 }
