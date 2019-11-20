@@ -1,14 +1,6 @@
 package com.ruide.subway.activity;
 import android.content.Context;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.adapter.Call;
-import com.lzy.okgo.cache.CacheMode;
-import com.lzy.okgo.callback.StringCallback;
-import com.lzy.okgo.model.Response;
 import com.ruide.subway.R;
 import com.ruide.subway.base.BaseMVPActivity;
 import com.ruide.subway.network.callback.StrCallback;
