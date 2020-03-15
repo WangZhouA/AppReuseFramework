@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
         Configuration config = getResources().getConfiguration();
         int a = config.smallestScreenWidthDp;
         Toast.makeText(this, ""+a, Toast.LENGTH_SHORT).show();
+
+
     }
 
 

@@ -3,17 +3,21 @@ import android.arch.lifecycle.LifecycleObserver;
 import android.content.Context;
 import android.os.Handler;
 
+import com.ruide.subway.network.RxManager;
+
 public abstract class PresenterImpl<V extends IView, M extends IModel> implements IPresenter<V>, LifecycleObserver {
 
     private V mIView;
     private M mIModel;
     private Handler mHandler;
     private Context mContext;
+    public RxManager rxManager;
 
     public PresenterImpl(Context context) {
         this.mContext = context;
         mIModel = initModel(context);
         mHandler = new Handler();
+        rxManager= new RxManager();
     }
 
     public abstract M initModel(Context context);

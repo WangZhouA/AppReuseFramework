@@ -1,5 +1,7 @@
 package com.ruide.subway.network.netUtils;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -37,7 +39,8 @@ public class OkGoUtils {
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(Response<String> response) {
-                        LogUtils.json(TAG,response.body());
+//                        LogUtils.json(TAG,response.body());
+                        Log.e("------->",response.body().toString());
                         callback.requestSuccess( response.body());
                     }
 
