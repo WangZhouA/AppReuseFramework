@@ -23,15 +23,4 @@ public class ModelImpl extends ViewModel implements IModel {
         return mContext;
     }
 
-
-    public static Map<String, RequestBody> generateRequestBody(Map<String, String> requestDataMap) {
-        Map<String, RequestBody> requestBodyMap = new HashMap<>();
-        for (String key : requestDataMap.keySet()) {
-            RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"),
-                    requestDataMap.get(key) == null ? "" : requestDataMap.get(key));
-            requestBodyMap.put(key, requestBody);
-        }
-        return requestBodyMap;
-    }
-
 }

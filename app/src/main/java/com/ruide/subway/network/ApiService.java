@@ -24,8 +24,14 @@ import retrofit2.http.Query;
  */
 public interface ApiService {
 
-    //添加的city_code = 101030100
-//    http://t.weather.sojson.com/api/weather/city/+city_code”
+    //path
+//    http://t.weather.sojson.com/api/weather/city/101030100
+
+    //Query
+//    http://t.weather.sojson.com/api/weather？city=101030100
+
+
+
     @GET("weather/city/{city_code}")
     Observable<BaseHttpResponse<WeatherEntity>> getWeather(@Path("city_code") String city_code);
 

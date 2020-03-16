@@ -6,15 +6,10 @@ import com.ruide.subway.bean.LoginBean;
 import com.ruide.subway.bean.WeatherEntity;
 import com.ruide.subway.mvp.ModelImpl;
 import com.ruide.subway.network.BaseHttpResponse;
-import com.ruide.subway.network.JsonRequestBodyBuilder;
 import com.ruide.subway.network.RetrofitManager;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.ruide.subway.network.NetRequestManger;
 
 import io.reactivex.Observable;
-import okhttp3.MediaType;
-import okhttp3.RequestBody;
 
 public class TestMode extends ModelImpl {
 
@@ -31,20 +26,7 @@ public class TestMode extends ModelImpl {
     }
 
     public Observable<BaseHttpResponse<LoginBean>> getLogin() {
-
-// 这是 json的 形式上传
-//        RequestBody requestBody = JsonRequestBodyBuilder.create()
-//                .addParam("password","###78a5523d172736068b6b3fff7d6ad3f7")
-//                .addParam("device_type","android")
-//                .addParam("email","514077686123@qq.com").build();
-//        return RetrofitManager.getInstance().getRequestService().getLogin(requestBody);
-
-      //  这是拼接的形式  form-data
-        Map<String, String> DataMap = new HashMap<String, String>();
-        DataMap .put("password","###78a5523d172736068b6b3fff7d6ad3f7");
-        DataMap .put("device_type","android");
-        DataMap .put("email","514077686123@qq.com");
-        return RetrofitManager.getInstance().getRequestService().getLoginFormData(generateRequestBody(DataMap));
+        return NetRequestManger.instance().login("###78a5523d172736068b6b3fff7d6ad3f7","android","514077686123@qq.com");
     }
 
 }
